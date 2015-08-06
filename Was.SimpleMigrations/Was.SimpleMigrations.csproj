@@ -49,6 +49,10 @@
       <HintPath>..\packages\Was.EventBus.0.0.1.6\lib\net40\Was.EventBus.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Was.EventBus.Autofac, Version=0.0.1.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Was.EventBus.Autofac.0.0.1.2\lib\net40\Was.EventBus.Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InvokingMigrationException.cs" />
