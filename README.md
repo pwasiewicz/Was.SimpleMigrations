@@ -2,6 +2,8 @@
 
 Simple module for perfoming migrations.
 
+Available as nuget package.
+
 ### Usage
 
 #### Running
