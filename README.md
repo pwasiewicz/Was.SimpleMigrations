@@ -16,6 +16,7 @@ MigrationResolver
                  
                  // registration of other dependecies that should be available in data migration
                  migrationBld.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>));
+                 migrationBld.Register(typeof(ApplicationDbContext)).As(typeof(DbContext));
             }, Assembly.GetExecutingAssembly());
 ```
 
@@ -67,10 +68,17 @@ internal class MigrationStorage : IMigrationMetaStorage
 
 #### Sample migration
 ```c#
-namespace NAUcrm.Areas.User.Migrations
+namespace SomeMigrations
 {
   public class UserMigrations : IDataMigration
   {
+      prvate readonly DbContext dbContext;
+       
+      public UserMigrations(DbContext ctx) 
+      {
+          this.dbContext = ctx;
+      }
+      
       public void UpdateFrom0()
       {
            // some stuff
